@@ -2,7 +2,7 @@
   <q-list bordered class="q-ma-md rounded-borders">
     <q-item v-for="survey in surveys" :key="survey.survey_id">
       <q-item-section top>
-        <q-item-label class="q-mt-xs text-h3 text-primary text-uppercase">
+        <q-item-label class="q-mt-xs text-h4 text-primary">
           <span class="cursor-pointer"
             ><router-link :to="{ path: `/questions/${survey.survey_id}` }">{{
               survey.title
@@ -13,8 +13,7 @@
       <q-item-section top side>
         <div class="text-grey-8 q-gutter-xs">
           <q-btn class="gt-xs" size="12px" flat dense round icon="delete" />
-          <q-btn class="gt-xs" size="12px" flat dense round icon="done" />
-          <q-btn size="12px" flat dense round icon="more_vert" />
+          <q-btn class="gt-xs" size="12px" flat dense round icon="edit" />
         </div>
       </q-item-section>
     </q-item>

@@ -2,12 +2,18 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-toolbar-title> Janmat App </q-toolbar-title>
-        <q-btn-group outline v-if="isAuthenticated">
+        <q-toolbar-title> Janmat App</q-toolbar-title>
+        <q-btn-group
+          outline
+          v-if="
+            isAuthenticated &&
+            ['rakesh@jangid.co.in', 'smcjjn@gmail.com'].includes(authStore.user.email)
+          "
+        >
           <q-btn color="primary" label="Users" to="/user-admin" />
           <q-btn color="primary" label="Surveys" to="/surveys" />
-          <q-btn label="Logout" color="primary" @click="logout" />
         </q-btn-group>
+        <q-btn v-if="isAuthenticated" label="Logout" color="secondary" @click="logout" />
       </q-toolbar>
     </q-header>
     <q-page-container>
