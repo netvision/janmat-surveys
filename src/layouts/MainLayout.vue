@@ -3,8 +3,11 @@
     <q-header elevated>
       <q-toolbar>
         <q-toolbar-title> Janmat App </q-toolbar-title>
-
-        <q-btn v-if="isAuthenticated" label="Logout" color="primary" @click="logout" />
+        <q-btn-group outline v-if="isAuthenticated">
+          <q-btn color="primary" label="Users" to="/user-admin" />
+          <q-btn color="primary" label="Surveys" to="/surveys" />
+          <q-btn label="Logout" color="primary" @click="logout" />
+        </q-btn-group>
       </q-toolbar>
     </q-header>
     <q-page-container>
