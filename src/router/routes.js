@@ -20,6 +20,11 @@ const routes = [
         meta: { requiresAuth: true },
       },
       {
+        path: '/response/:surveyId', // Dynamic route with surveyId
+        component: () => import('pages/ResponsePage.vue'),
+        meta: { requiresAuth: true },
+      },
+      {
         path: '/login',
         component: () => import('pages/LoginPage.vue'),
       },
