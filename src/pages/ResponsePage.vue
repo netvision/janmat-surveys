@@ -24,7 +24,7 @@
         </q-stepper-navigation>
       </q-step>
     </q-stepper>
-    {{ location }}
+    {{ lng }}, {{ lat }}
   </q-page>
 </template>
 <script setup>
@@ -39,7 +39,8 @@ const surveyId = route.params.surveyId
 const survey = ref({})
 const questions = ref([])
 const step = ref(1)
-const location = ref()
+const lat = ref()
+const lng = ref()
 
 // step = questions[i + 1].question_id
 
@@ -58,8 +59,8 @@ const getLocation = () => {
 
   navigator.geolocation.getCurrentPosition(
     (position) => {
-      location.value.lat = position.coords.latitude
-      location.value.lng = position.coords.longitude
+      lat.value = position.coords.latitude
+      lng.value = position.coords.longitude
       $q.notify({
         type: 'positive',
         message: 'GPS Coordinates retrieved successfully!',
